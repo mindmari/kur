@@ -16,9 +16,9 @@ class CreateAutorSerialTable extends Migration
         Schema::create('autor_serial', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('serial_id')->unsigned();
-            $table->foreign('serial_id')->references('id')->on('serial');
+            $table->foreign('serial_id')->references('id')->on('serials');
             $table->bigInteger('autor_id')->unsigned();
-            $table->foreign('autor_id')->references('id')->on('autor');
+            $table->foreign('autor_id')->references('id')->on('autors');
         });
     }
 

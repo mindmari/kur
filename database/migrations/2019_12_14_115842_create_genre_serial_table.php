@@ -16,9 +16,9 @@ class CreateGenreSerialTable extends Migration
         Schema::create('genre_serial', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('serial_id')->unsigned();
-            $table->foreign('serial_id')->references('id')->on('serial');
+            $table->foreign('serial_id')->references('id')->on('serials');
             $table->bigInteger('genre_id')->unsigned();
-            $table->foreign('genre_id')->references('id')->on('genre');
+            $table->foreign('genre_id')->references('id')->on('genres');
         });
     }
 

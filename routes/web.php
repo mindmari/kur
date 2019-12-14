@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+route::group(['namespace'=>'serial'], function(){
+    route::resource('posts','PostController')->names('posts');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

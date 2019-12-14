@@ -13,12 +13,12 @@ class CreateSerialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('serial', function (Blueprint $table) {
+        Schema::create('serials', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('s_name', 50);
             $table->bigInteger('country_id')->unsigned();
-            $table->foreign('country_id')->references('id')->on('country');
+            $table->foreign('country_id')->references('id')->on('countries');
             $table->dateTime('realise_data');
             $table->text('description');
             $table->text('img');
@@ -32,6 +32,6 @@ class CreateSerialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('serial');
+        Schema::dropIfExists('serials');
     }
 }

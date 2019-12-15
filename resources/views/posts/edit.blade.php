@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form method="post" action="posts/{{ $serials->id}}">
+    <form method="post" action="/posts/{{ $serials->id}}">
         @method('PATCH')
         {{ csrf_field() }}
         <div class="form-group">
@@ -16,16 +16,16 @@
         <button type="submit" class="btn btn-primary">Создать новый сериал</button>
     </form>
 
-    @method('DELETE')
-    @csrf
 
-    <form>
+
+    <form method="POST" action="/posts/{{ $serials->id }}">
+        @method('DELETE')
+        @csrf
     <div class="field">
         <div class="control">
-            <button type="submit" class="button is-link">Delete Player</button>
+            <button type="submit" class="button is-link">Delete </button>
         </div>
     </div>
     </form>
-
 @endsection
 

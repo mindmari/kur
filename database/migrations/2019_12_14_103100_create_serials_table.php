@@ -19,9 +19,11 @@ class CreateSerialsTable extends Migration
             $table->string('s_name', 50);
             $table->bigInteger('country_id')->unsigned();
             $table->foreign('country_id')->references('id')->on('countries');
-            $table->dateTime('realise_data');
+            $table->date('realise_data');
             $table->text('description');
             $table->text('img');
+            $table->softDeletes();
+
         });
     }
 
